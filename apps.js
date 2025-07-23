@@ -32,7 +32,8 @@ async function createTodo(event){
         <button id="${data.id}" class="delete-todo">DELETE</button>
         `;
 
-        todosContainer.appendChild(newElement);
+        todosContainer.prepend(newElement); 
+            //adds to the beginning; appendChild also work but for the end 
         event.target.reset(); //reset the form
 
     } catch (error) {
@@ -78,7 +79,7 @@ async function fetchTodos() {
             <button class="toggle-complete">Toggle Complete</button>
             <button id="${item.id}" class="delete-todo">DELETE</button>
             `;
-            todosContainer.appendChild(newElement);
+            todosContainer.prepend(newElement);
         }
     } catch (error) {
         console.log(error);
