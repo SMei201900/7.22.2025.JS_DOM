@@ -1,5 +1,9 @@
 h1 { color:aliceblue}
 
+.todo-card {
+    background-color: #FFF8DC;
+    margin: 10px;
+}
 .delete-todo {
     background-color: red;
     color: white;
