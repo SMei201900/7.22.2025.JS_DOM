@@ -23,14 +23,16 @@ async function createToDo(event) { //submit function to create a new todo and to
             body: JSON.stringify(payload), //converting our data to JSON 
             headers
         });
+
         const data = await response.json(); //we need to convert the response to JSON 
 
         //create new element to add with our JSON data 
         const newElement = document.createElement("section") 
             //creates a new element to add with out JSON data
         newElement.innerHTML = ` 
-        <p> ${data.title} </p>
-        <p> ${data.completed ? "TODO COMPLETE" : "TODO INCOMPLETE"} </p>
+        <p>${data.title} </p>
+        <p>${data.completed ? "TODO COMPLETE" : "TODO INCOMPLETE"} </p>
+        <button class="toggle-complete">Toggle Complete </button>
         <button class="delete-todo">DELETE</button>
         `;
 
@@ -49,5 +51,4 @@ document.addEventListener("click", function(event) {
     if (event.target.classList.contains("delete-todo")) {
         event.target.parentElement.remove();
     }
-
-})
+});
